@@ -10,9 +10,9 @@ Let us know think in a functional way about how to achieve the intent.
 
 The example on Wikipedia is just a toy example 
 
-lets say we have a construction. That contruction can be a house, a store, a hospital 
-type Construction = { NumWalls:uint; Accessibility:bool; NumToilets:uint }
+Lets say we have a construction domain. We require to build a object of construction which can be a house, a store, a hospital. A piece of construction has a few windows, toilets, electricity points, and a lot of other things. However, the rules for amount of windows are different for house, store, hospital and other types of construction object. Let us see how to apply builder pattern in this domain. 
 
-Lets say to  every construction object we can add rooms, add toilets wheelchair accessibility etc. 
-
-This seems a faily 
+First we define the construction type as follows:
+```fsharp 
+type Construction = { NumWindows:uint; NumToilets:uint; NumElectricity:uint }
+```
